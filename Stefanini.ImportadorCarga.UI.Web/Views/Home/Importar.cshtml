@@ -1,0 +1,16 @@
+﻿@model Stefanini.ImportadorCarga.UI.Web.Models.ImportarArquivo
+
+@{
+    ViewBag.Title = "Importar";
+}
+
+<h2>Importar</h2>
+
+@using (Html.BeginForm("Importar", "Home", FormMethod.Post, new { enctype = "multpart/form-data" }))
+{
+    @Html.ValidationSummary()
+
+    @Html.TextBoxFor(m => m.Arquivo, new { type = "file" })
+    <input type = "submit" value=" Importar" />
+}
+
